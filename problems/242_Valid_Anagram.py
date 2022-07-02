@@ -9,29 +9,34 @@ class Solution:
             '''
             use two hash tables to write down the occurence of characters in a string
 
-            - time complexity: O(n)
-            - space complexity: O(n)
+            - time complexity: O(s+t)
+            - space complexity: O(s+t)
             '''
-            dict_s = {}
-            dict_t = {}
-            for i in range(len(s)):
-                if dict_s.get(s[i]) is None:
-                    dict_s[s[i]] = 1
-                else:
-                    dict_s[s[i]] = dict_s[s[i]] + 1
-
-            for i in range(len(t)): 
-                if dict_t.get(t[i]) is None:
-                    dict_t[t[i]] = 1
-                else:
-                    dict_t[t[i]] = dict_t[t[i]] + 1
-
-            if dict_s == dict_t:
-                return True
-            else:
+            if len(s) != len(t):
                 return False
+            
+            dict_s, dict_t = {}, {}
+            for i in range(len(s)):
+                dict_s[s[i]] = 1 + dict_s.get(s[i], 0)
+                dict_t[t[i]] = 1 + dict_t.get(t[i], 0)
 
-        return solution1()
+            for c in dict_s:
+                if dict_s[c] != dict_t.get(c, 0):
+                    return False
+            
+            return True
+        
+        def solution2():
+            '''
+            sorted and compare
+
+            - time complexity: O(n^2) or O(nlogn) depend on what sort algorithm
+            - space complexity: O(1)
+            '''
+            return sorted(s) == sorted(t)
+
+
+        return solution2()
     
 s = "anagram"
 t = "nagaram"
