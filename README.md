@@ -29,4 +29,4 @@ for key, val in dic.items():
 ```
 
 ### Keywords
-- bucket sort: index=count/frequency, value=the elements you want => O(n)
+- bucket sort: index=count/frequency, value=the elements you want => O(n) => 當需要用dictionary value做排序時
