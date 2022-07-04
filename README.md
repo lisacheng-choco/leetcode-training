@@ -17,3 +17,16 @@ for i, num in enumerate(nums):
     idx = i
     element = num
 ```
+
+### Iterate dictionary's key & value
+```python
+dic = {"key1": "value1"}
+
+# dic.items() is to make dictionry into list of tuples: List[tuple]
+for key, val in dic.items(): 
+    key = "key1"
+    val = "value1"
+```
+
+### Keywords
+- bucket sort: index=count/frequency, value=the elements you want => O(n)

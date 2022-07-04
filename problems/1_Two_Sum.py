@@ -2,8 +2,6 @@
 - Leetcode URL: https://leetcode.com/problems/two-sum/
 - Video: https://www.youtube.com/watch?v=KLlXCFG5TnA
 '''
-from tkinter import N
-
 
 class Solution:
     def twoSum(self, nums, target: int):
