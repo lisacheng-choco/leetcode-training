@@ -28,5 +28,25 @@ for key, val in dic.items():
     val = "value1"
 ```
 
+### dictionary fetch value
+如果key不在，新增一組key, value(default=set()) pair , 反之add randmon number to set
+```python
+num = random num
+# 1
+dic = {}
+if "k" not in dic:
+    dic["k"] = set()
+else:
+    dic[k] = dic[k].add(num)
+# 2
+dic = collections.defaultdict(set) # 宣告一個dictionary其default value是set()
+dic["k"].add(num)
+
+```
+----
+```python
+val = dic.get("key", set()) # if dic 的key不包含"key"，val回傳set()
+```
+
 ### Keywords
 - bucket sort: index=count/frequency, value=the elements you want => O(n) => 當需要用dictionary value做排序時
