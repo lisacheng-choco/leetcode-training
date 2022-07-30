@@ -48,5 +48,18 @@ dic["k"].add(num)
 val = dic.get("key", set()) # if dic 的key不包含"key"，val回傳set()
 ```
 
+### Reverse a list, string, tuple in Python (reverse, reversed)
+- for a list: 
+    - l.reverse() (return None)  
+    - reversed(l) (return list) 
+    - l[::-1]
+- for a string or tuple: 
+    - reversed(s), reversed(t)
+    - s[::-1], t[::-1]
+
+### Determine if a character is aplha or numeric
+- use ASCII 
+- use Python build-in function: isalnum() / isalpha(), isnumeric()
+
 ### Keywords
 - bucket sort: index=count/frequency, value=the elements you want => O(n) => 當需要用dictionary value做排序時
