@@ -61,5 +61,30 @@ val = dic.get("key", set()) # if dic 的key不包含"key"，val回傳set()
 - use ASCII 
 - use Python build-in function: isalnum() / isalpha(), isnumeric()
 
+### Sort by key
+```python
+# scenario 1: sort list of numbers
+a = [1, 5, 3, 4, 2]
+
+a.sort()
+heapq.heapify(a)
+
+# scenario 2: sort list of tuples
+a = [(1, 0), (5, 1), (3, 2), (4, 3), (2, 4)]
+
+a.sort(key=lambda tup: tup[0]) # sort by the first element of tuple
+a.sort(key=lambda tup: tup[1]) # sort by the second element of tuple
+
+heapq.heapify(a) # sort by the by the first element of tuple. if the first elements are equal, then compare the second element
+
+# scenario 2: sort list of lists
+a = [[1, 0], [5, 1], [3, 2], [4, 3], [2, 4]]
+
+a.sort(key=lambda lst: lst[0]) # sort by the first element of tuple
+a.sort(key=lambda lst: lst[1]) # sort by the second element of tuple
+
+heapq.heapify(a) # sort by the by the first element of tuple. if the first elements are equal, then compare the second element
+```
+
 ### Keywords
 - bucket sort: index=count/frequency, value=the elements you want => O(n) => 當需要用dictionary value做排序時
